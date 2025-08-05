@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoring tools SPDF</title>
+</head>
+<body class="bg-slate-50 text-slate-800">
+    <div class="container mx-auto p-4 sm:p-6 md:p-8">
+
+        <header class="text-center mb-8">
+            <h1 class="text-3xl sm:text-4xl font-bold text-slate-900">Dasbor Monitoring Alat</h1>
+            <p class="mt-2 text-slate-600 max-w-2xl mx-auto">Pantau ketersediaan alat secara real-time. Klik tombol 'Pinjam' untuk mengisi form peminjaman.</p>
+        </header>
+
+        <main>
+            <section id="dashboard" class="mb-12">
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="flex flex-col sm:flex-row justify-between items-center mb-6">
+                        <h2 class="text-2xl font-semibold text-slate-800 mb-4 sm:mb-0">Status Alat</h2>
+                        <div id="filter-controls" class="flex items-center space-x-2 bg-slate-100 p-1 rounded-lg">
+                            <button data-filter="all" class="filter-btn active">Semua</button>
+                            <button data-filter="available" class="filter-btn">Tersedia</button>
+                            <button data-filter="borrowed" class="filter-btn">Dipinjam</button>
+                        </div>
+                    </div>
+
+                    <div id="tool-grid" class="tool-grid">
+                    </div>
+                </div>
+            </section>
+            
+            <!-- <section id="workflow" class="mb-12">
+                 <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h2 class="text-2xl font-semibold text-slate-800 mb-4 text-center">Alur Kerja Peminjaman</h2>
+                    <p class="text-center text-slate-600 mb-8 max-w-3xl mx-auto">Berikut adalah proses lengkap dari peminjaman alat oleh pengguna hingga statusnya diperbarui secara otomatis di dasbor.</p>
+                    <div class="flex flex-col md:flex-row items-center justify-center flex-wrap gap-4 text-center">
+                        <div class="flow-arrow flow-card">
+                            <span class="text-4xl">👤</span>
+                            <h3 class="font-semibold mt-2">Pengguna</h3>
+                            <p class="text-sm text-slate-500">Membuka Dasbor</p>
+                        </div>
+                        <div class="flow-arrow flow-card">
+                           <span class="text-4xl">📋</span>
+                            <h3 class="font-semibold mt-2">Google Form</h3>
+                            <p class="text-sm text-slate-500">Mengisi Form Pinjam</p>
+                        </div>
+                        <div class="flow-arrow flow-card">
+                            <span class="text-4xl">⚙️</span>
+                            <h3 class="font-semibold mt-2">Apps Script</h3>
+                            <p class="text-sm text-slate-500">Memicu Webhook</p>
+                        </div>
+                        <div class="flow-arrow flow-card">
+                           <span class="text-4xl">☁️</span>
+                            <h3 class="font-semibold mt-2">Cloud Function</h3>
+                            <p class="text-sm text-slate-500">Memproses Data</p>
+                        </div>
+                        <div class="flow-arrow flow-card">
+                            <span class="text-4xl">💾</span>
+                            <h3 class="font-semibold mt-2">Firebase DB</h3>
+                            <p class="text-sm text-slate-500">Update Status</p>
+                        </div>
+                        <div class="flow-card">
+                            <span class="text-4xl">🖥️</span>
+                            <h3 class="font-semibold mt-2">Dasbor React</h3>
+                            <p class="text-sm text-slate-500">Status Berubah</p>
+                        </div>
+                    </div>
+                 </div>
+            </section> -->
+            
+            <!-- <section id="architecture" class="mb-12">
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <h2 class="text-2xl font-semibold text-slate-800 mb-4 text-center">Arsitektur Sistem</h2>
+                    <p class="text-center text-slate-600 mb-8 max-w-3xl mx-auto">Sistem ini dibangun dari beberapa komponen utama yang bekerja sama untuk menyediakan fungsionalitas real-time, dari antarmuka pengguna hingga backend.</p>
+                    <div class="chart-container">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                            <div class="p-4 border rounded-lg bg-blue-100 text-blue-800">
+                                <h3 class="font-semibold text-lg mb-2">Frontend</h3>
+                                <div class="space-y-2">
+                                    <div class="p-2 rounded bg-sky-100 text-sky-800">Vite + React.js</div>
+                                    <div class="p-2 rounded bg-sky-100 text-sky-800">Vanilla CSS</div>
+                                </div>
+                            </div>
+                            <div class="flex items-center justify-center">
+                               <div class="p-4 border rounded-lg bg-purple-100 text-purple-800">
+                                 <h3 class="font-semibold text-lg mb-2">Integrasi</h3>
+                                  <div class="space-y-2">
+                                      <div class="p-2 rounded bg-gray-100 text-gray-800">Google Forms</div>
+                                      <div class="p-2 rounded bg-gray-100 text-gray-800">Google Apps Script</div>
+                                  </div>
+                               </div>
+                            </div>
+                            <div class="p-4 border rounded-lg bg-amber-100 text-amber-800">
+                                <h3 class="font-semibold text-lg mb-2">Backend</h3>
+                                <div class="space-y-2">
+                                    <div class="p-2 rounded bg-indigo-100 text-indigo-800">Firebase Realtime DB</div>
+                                    <div class="p-2 rounded bg-indigo-100 text-indigo-800">Google Cloud Functions</div>
+                                    <div class="p-2 rounded bg-indigo-100 text-indigo-800">Firebase Hosting</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section> -->
+        </main>
+        
+        <footer class="text-center mt-12 py-6 border-t border-slate-200">
+            <p class="text-sm text-slate-500">&copy; 2025 Dashboard Monitoring tools Made with hack by Diobinzz</p>
+        </footer>
+
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const toolGrid = document.getElementById('tool-grid');
+            const filterControls = document.getElementById('filter-controls');
+
+            let currentFilter = 'all';
+
+            // Initial data for tools
+            const initialToolsData = [
+                { id: 'TL001', name: 'Mesin Bor Bosch', status: 'available' }, 
+                { id: 'TL002', name: 'Gerinda Tangan', status: 'available' },
+                { id: 'TL003', name: 'Gergaji Jigsaw', status: 'available' },
+                { id: 'TL004', name: 'Amplas Elektrik', status: 'available' },
+                { id: 'TL005', name: 'Multimeter Digital', status: 'available' },
+                { id: 'TL006', name: 'Kunci Inggris Set', status: 'available' },
+                { id: 'TL007', name: 'Tang Rivet', status: 'available' },
+                { id: 'TL008', name: 'Palu Konde', status: 'borrowed' },
+                { id: 'TL009', name: 'Obeng Set Lengkap', status: 'available' },
+                { id: 'TL010', name: 'Solder Uap', status: 'available' },
+                { id: 'TL011', name: 'Heat Gun', status: 'borrowed' },
+                { id: 'TL012', name: 'Vacuum Cleaner Industri', status: 'available' },
+                { id: 'TL013', name: 'Kompresor Angin', status: 'available' },
+                { id: 'TL014', name: 'Mata Bor Set', status: 'borrowed' },
+                { id: 'TL015', name: 'Mesin Las Listrik', status: 'available' },
+                { id: 'TL016', name: 'Meteran Laser', status: 'available' },
+                { id: 'TL017', name: 'Waterpass Digital', status: 'borrowed' },
+                { id: 'TL018', name: 'Kunci Pas Ring Set', status: 'available' },
+                { id: 'TL019', name: 'Dongkrak Buaya 2T', status: 'available' },
+                { id: 'TL020', name: 'Kunci Momen', status: 'borrowed' },
+                { id: 'TL021', name: 'Mesin Potong Rumput', status: 'available' },
+                { id: 'TL022', name: 'Pressure Washer', status: 'available' },
+                { id: 'TL023', name: 'Tool Box Besi', status: 'borrowed' },
+                { id: 'TL024', name: 'Tangga Lipat Aluminium', status: 'available' },
+                { id: 'TL025', name: 'Genset Mini', status: 'available' }
+            ];
+
+            // Deep copy and reset all tools to 'available' on initial load
+            let toolsData = initialToolsData.map(tool => ({ ...tool, status: 'available' }));
+            
+            function renderTools() {
+                toolGrid.innerHTML = '';
+                const filteredTools = toolsData.filter(tool => {
+                    if (currentFilter === 'all') return true;
+                    return tool.status === currentFilter;
+                });
+
+                if (filteredTools.length === 0) {
+                     toolGrid.innerHTML = `<div class="col-span-full text-center py-12">
+                        <h3 class="text-xl font-medium text-slate-700">Tidak ada alat yang cocok</h3>
+                        <p class="text-slate-500 mt-2">Coba ganti filter untuk melihat hasil yang berbeda.</p>
+                     </div>`;
+                     return;
+                }
+
+                filteredTools.forEach(tool => {
+                    const isAvailable = tool.status === 'available';
+                    const isBorrowed = tool.status === 'borrowed';
+                    
+                    const card = document.createElement('div');
+                    card.className = `tool-card border-l-4 p-4 rounded-lg flex flex-col justify-between transition-all duration-300 ${isAvailable ? 'bg-green-50 border-green-500' : 'bg-red-50 border-red-500'}`;
+                    card.dataset.id = tool.id;
+                    card.dataset.status = tool.status;
+
+                    const content = `
+                        <div>
+                            <span class="text-xs font-semibold px-2 py-1 rounded-full ${isAvailable ? 'bg-green-200 text-green-800' : 'bg-red-200 text-red-800'}">
+                                ${isAvailable ? 'Tersedia' : 'Dipinjam'}
+                            </span>
+                            <h3 class="font-semibold text-lg mt-3 text-slate-800">${tool.name}</h3>
+                            <p class="text-sm text-slate-500">${tool.id}</p>
+                        </div>
+                        <div class="mt-4 flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
+                            ${isAvailable ? 
+                                `<a href="https://forms.gle/T1bBbGQawQs5NLrU9" target="_blank" class="borrow-btn flex-grow text-center inline-block bg-slate-800 text-white font-semibold py-2 px-4 rounded-lg hover:bg-slate-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-slate-500 transition-colors" data-id="${tool.id}">
+                                    Pinjam
+                                </a>` 
+                                : 
+                                `<a href="https://docs.google.com/forms/d/e/1FAIpQLSehIyyZrz8qYhgh03aR0lLmxIYfNCUdRoov8kIyosnY0GAkLw/viewform?usp=header" target="_blank" class="return-btn flex-grow text-center inline-block bg-orange-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-400 transition-colors" data-id="${tool.id}">
+                                    Kembalikan
+                                </a>`
+                            }
+                        </div>
+                    `;
+                    card.innerHTML = content;
+                    toolGrid.appendChild(card);
+                });
+            }
+            
+            filterControls.addEventListener('click', function(e) {
+                if (e.target.classList.contains('filter-btn')) {
+                    const filterValue = e.target.dataset.filter;
+                    currentFilter = filterValue;
+
+                    document.querySelectorAll('.filter-btn').forEach(btn => {
+                        btn.classList.remove('bg-white', 'text-slate-700', 'shadow', 'font-medium');
+                        btn.classList.add('text-slate-600');
+                    });
+                    
+                    e.target.classList.add('bg-white', 'text-slate-700', 'shadow', 'font-medium');
+                    e.target.classList.remove('text-slate-600');
+                    
+                    renderTools();
+                }
+            });
+
+            // Event listener for the borrow and return buttons
+            toolGrid.addEventListener('click', function(e) {
+                // Borrow button logic
+                if (e.target.classList.contains('borrow-btn')) {
+                    e.preventDefault();
+                    const toolId = e.target.dataset.id;
+                    const tool = toolsData.find(t => t.id === toolId);
+                    if (tool) {
+                        // Update the tool status to 'borrowed'
+                        tool.status = 'borrowed';
+                        // Open the form in a new tab
+                        window.open(e.target.href, '_blank');
+                        // Re-render the UI to reflect the change
+                        renderTools();
+                    }
+                }
+
+                // New Return button logic
+                if (e.target.classList.contains('return-btn')) {
+                    e.preventDefault();
+                    const toolId = e.target.dataset.id;
+                    const tool = toolsData.find(t => t.id === toolId);
+                    if (tool) {
+                        // Update the tool status to 'available'
+                        tool.status = 'available';
+                        // Open the return form in a new tab
+                        window.open(e.target.href, '_blank'); // Placeholder for return form
+                        // Re-render the UI to reflect the change
+                        renderTools();
+                    }
+                }
+            });
+            
+            renderTools();
+        });
+    </script>
+</body>
+</html>

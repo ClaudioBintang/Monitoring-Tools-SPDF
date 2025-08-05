@@ -1,0 +1,20 @@
+{
+  "name": "monitoring-tools",
+  "version": "1.0.0",
+  "main": "script.js",
+  "scripts": {
+    "test": "npx @tailwindcss/cli -i ./src/input.css -o ./src/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^4.1.11"
+  },
+  "description": "",
+  "dependencies": {
+    "@tailwindcss/cli": "^4.1.11"
+  }
+}
